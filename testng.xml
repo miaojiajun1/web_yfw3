@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Suite" parallel="false">
+  <test name="Test">
+  <parameter name="browserName" value="chrome"></parameter>
+    <classes>
+   	  <!-- <class name="com.yfw3.testcases.LoginTest"/> -->
+   	  <class name="com.yfw3.testcases.SettledTest"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
