@@ -19,7 +19,7 @@ public class SettledTest {
 	@Parameters({"browserName"})
 	@BeforeSuite
 	//前置步骤
-		public void setUpSuite() {
+		public void setUpSuite() throws InterruptedException{
 			BrowserUtil.openBrowser("chrome");
 			BrowserUtil.driver.get(Constants.INDEX_URL);
 			BrowserUtil.browserMaxmize();
@@ -28,8 +28,9 @@ public class SettledTest {
 		
 		/**
 		 * 选择、输入数据
+		 * @throws InterruptedException 
 		 */
-		public void startSettled() {
+		public void startSettled() throws InterruptedException {
 			//点击右上角入驻
 			IndexPage indexPage = new IndexPage();
 			indexPage.clickSettle();
@@ -57,11 +58,13 @@ public class SettledTest {
 			//店铺所在地
 			settledPage.clickProvincial();
 			settledPage.selectProvincialByText("上海市");
+			Thread.sleep(2000);
 			settledPage.selectPrefectureByText("浦东新区");
-			settledPage.inputAddressDetail("上海市浦东新区张江镇");
+			settledPage.inputAddressDetail("上海市浦东新区张江镇盛夏路666号");
 //			settledPage.inputPartnerCode("123456");
 			settledPage.clickAgreeProtocol();
 			settledPage.clickRegister();
+			
 		}
 
 }

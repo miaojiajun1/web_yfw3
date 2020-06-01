@@ -4,8 +4,12 @@ import org.openqa.selenium.By;
 
 import com.yfw3.base.BasePage;
 
+/**
+ * yfw3首页
+ * @author miao_
+ *
+ */
 public class IndexPage extends BasePage{
-
 	//首页登录按钮元素	//a[text()='登录']
 	private By loginBy = By.xpath("//a[text()='登录']");
 	//首页购物车按钮元素	 //a[text()='购物车（']
