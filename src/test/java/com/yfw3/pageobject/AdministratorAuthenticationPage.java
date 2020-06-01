@@ -1,5 +1,7 @@
 package com.yfw3.pageobject;
 
+import java.io.IOException;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
@@ -45,7 +47,14 @@ public class AdministratorAuthenticationPage extends BasePage{
 	//上传身份证人像面 ---- 有问题
 	public void inputImageBy(String image) {
 		WebElement webElement = waitElementVisible(idCardPortraitBy);
-		webElement.sendKeys(image);
+//		webElement.sendKeys(image);
+		Runtime runtime = Runtime.getRuntime();
+		try {
+			runtime.exec("C:\\Users\\miao_\\Desktop\\TIM截图20200601172156.png");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 }

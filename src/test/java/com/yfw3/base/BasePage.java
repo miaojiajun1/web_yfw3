@@ -26,7 +26,9 @@ public class BasePage {
 		WebElement webElement = webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(by));
 		return webElement;
 	}
-	
+	/**
+	 * 滑动到指定元素
+	 */
 	public void scrollToElement(By by) {
 		WebElement webElement = waitElementVisible(by);
 		JavascriptExecutor jsExecuter = (JavascriptExecutor)BrowserUtil.driver;
