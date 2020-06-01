@@ -15,7 +15,6 @@ public class AdministratorAuthenticationPage extends BasePage{
 	private By idCardPortraitBy = By.xpath("//label[@data-imgtype='sfz_reverse']");
 	//身份证国徽面
 	private By idCardNationalEmblemBy = By.xpath("//label[@data-imgtype='sfz_front']");
-	
 	//管理员姓名
 	private By administratorNameBy = By.xpath("//input[@id='admin_RealName']");
 	//管理员身份证号

@@ -53,7 +53,7 @@ public class SettledPage extends BasePage{
 	//点击勾选同意协议
 	private By agreeProtocolBy = By.xpath("//input[@type='checkbox']");
 	//注册按钮
-	private By registerBy = By.xpath("//a[@class='submit js_register']");
+	private By registerBy = By.xpath("//a[text()='注册']");
 
 	
 	
@@ -146,10 +146,12 @@ public class SettledPage extends BasePage{
 	public void inputPartnerCode(String data) {
 		type(partnerCodeBy, data);
 	}
-	//同意协议 - 滑动到指定元素
+	//滑动到注册位置
+	public void scrollToRegister() {
+		scrollToElement(registerBy);
+	}
+	//默认同意协议 - 点击后不同意
 	public void clickAgreeProtocol() {
-		WebElement webElement = waitElementClickable(agreeProtocolBy);
-//		JavascriptExecutor jsExecutor = 
 		click(agreeProtocolBy);
 	}
 	//点击注册

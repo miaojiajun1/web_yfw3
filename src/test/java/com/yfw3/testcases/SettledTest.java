@@ -58,12 +58,14 @@ public class SettledTest {
 			//店铺所在地
 			settledPage.clickProvincial();
 			settledPage.selectProvincialByText("上海市");
-			Thread.sleep(2000);
+			Thread.sleep(1000);
 			settledPage.selectPrefectureByText("浦东新区");
 			settledPage.inputAddressDetail("上海市浦东新区张江镇盛夏路666号");
 //			settledPage.inputPartnerCode("123456");
-			settledPage.clickAgreeProtocol();
+			settledPage.scrollToRegister();
 			settledPage.clickRegister();
+//			settledPage.clickAgreeProtocol();
+
 			
 		}
 

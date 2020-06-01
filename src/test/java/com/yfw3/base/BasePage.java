@@ -10,7 +10,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import com.yfw3.utils.BrowserUtil;
 
 public class BasePage {
-	public static WebDriver driver;
 	/**
 	 * 显示等待，等待元素是否可被点击
 	 */
@@ -28,30 +27,12 @@ public class BasePage {
 		return webElement;
 	}
 	
-	public WebElement waiteElementSlide(By by) {
-		WebDriverWait webDriverWait = new WebDriverWait(BrowserUtil.driver, 15);
-		WebElement webElement = webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(by));
-		JavascriptExecutor jsExecuter = (JavascriptExecutor)driver;
-		while(true){
-			//滑动之前的页面信息
-			String beforeSource = driver.getPageSource();
-			//如果找到了元素，我们就退出
-			if(beforeSource.contains("")){
-				driver.findElement(By.xpath("//")).click();
-				break;
-			}		
-			//滑动到指定元素的位置上
-			jsExecuter.executeScript("arguments[0].scrollIntoView()",webElement);
-//			Thread.sleep(1000);
-			String afterSource = driver.getPageSource();
-			//是不是滑动到了底部  getPageSource()
-			if(beforeSource.equals(afterSource)){
-				//滑动到了底部
-				break;
-				}
-		}
-		return webElement;
+	public void scrollToElement(By by) {
+		WebElement webElement = waitElementVisible(by);
+		JavascriptExecutor jsExecuter = (JavascriptExecutor)BrowserUtil.driver;
+		jsExecuter.executeScript("arguments[0].scrollIntoView()",webElement);
 	}
+	
 	
 	/**
 	 * 点击
